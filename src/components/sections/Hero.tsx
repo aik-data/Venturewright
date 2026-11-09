@@ -1,13 +1,5 @@
 import { BookingLink } from "@/components/BookingLink";
-import { ArrowDown } from "@/components/Icons";
-import { CATEGORY } from "@/lib/site";
-
-const TAGS = [
-  "Owner Independence",
-  "Growth",
-  "New Ventures",
-  "Business Architecture",
-];
+import { CATEGORY, FOUNDER_NAME } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -16,34 +8,32 @@ export function Hero() {
         <div>
           <p className="eyebrow eyebrow--ruled eyebrow--accent">{CATEGORY}</p>
           <h1 className="hero__title" id="hero-title">
-            <span>Find the constraint.</span>{" "}
-            <span>Architect the solution.</span>{" "}
-            <span>Build what comes next.</span>
+            <span>A stronger business.</span>{" "}
+            <span>Less dependent on you.</span>
           </h1>
         </div>
 
         <div className="hero__body">
-          <p className="hero__lead">
-            Venturewright is a business architecture studio for founder-led
-            companies. We identify the constraint or opportunity with the
-            greatest leverage, design the architecture around it, and help turn
-            that architecture into measurable business reality.
-          </p>
+          <div className="hero__copy">
+            <p className="hero__lead">
+              Venturewright helps owners of established businesses identify
+              what is holding them back and redesign the leadership, workflows,
+              and decisions that need to change.
+            </p>
+            <p className="hero__founder">
+              Founded and led by {FOUNDER_NAME}, an owner and operator who has
+              spent eight years building and redesigning businesses from the
+              inside.
+            </p>
+          </div>
 
           <div className="hero__actions">
             <BookingLink />
-            <a href="#approach" className="btn btn--secondary">
-              <span>See How Venturewright Works</span>
-              <ArrowDown className="btn__icon" />
-            </a>
+            <p className="hero__note">
+              30-minute introductory conversation. No preparation required.
+            </p>
           </div>
         </div>
-
-        <ul className="hero__tags">
-          {TAGS.map((tag) => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
       </div>
     </section>
   );

@@ -18,10 +18,12 @@ export function FinalCta() {
         </Reveal>
 
         <Reveal className="final__grid" delay={60}>
-          <div className="prose">
-            <p>You may already know the answer.</p>
-            <p>Or the problem you see may only be a symptom.</p>
-            <p>Either way, the first step is understanding the business.</p>
+          <div className="prose prose--tight">
+            <p>
+              The first step is a 30-minute introductory conversation. You and
+              Matthew will talk about your business, what you want to change,
+              and whether an engagement makes sense.
+            </p>
           </div>
 
           <div className="final__aside">
@@ -29,11 +31,7 @@ export function FinalCta() {
             <p className="final__meta">
               <EmailLink className="link" />
               <br />
-              <span className="final__note">
-                30-minute introductory business conversation.
-                <br />
-                No preparation required.
-              </span>
+              <span className="final__note">No preparation required.</span>
             </p>
           </div>
         </Reveal>

@@ -63,8 +63,8 @@ No URL or email address is hard-coded anywhere else in the codebase.
 
 ### Editing the copy
 
-* Repeating, structured copy (the method steps, the three value pillars, the
-  case studies, the owner-situation lists) is in
+* Repeating, structured copy (the three owner situations, the four
+  engagement steps, the operating-experience examples) is in
   [`src/lib/content.ts`](src/lib/content.ts).
 * Narrative prose sits inline in the section component it belongs to, under
   [`src/components/sections/`](src/components/sections/).
@@ -106,10 +106,10 @@ src/
     Footer.tsx
     BookingLink.tsx   the single primary CTA
     EmailLink.tsx
-    Rail.tsx          the numbered horizontal progression used twice
     Reveal.tsx        scroll reveal (client component, progressive enhancement)
     Icons.tsx
-    sections/         one component per page section
+    sections/         one component per page section:
+                      Hero, Situations, HowItWorks, Experience, About, FinalCta
   lib/
     site.ts           centralised configuration  <-- edit business facts here
     content.ts        structured copy

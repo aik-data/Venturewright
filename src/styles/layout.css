@@ -68,10 +68,9 @@
 @media (min-width: 60em) {
   .editorial {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    gap: clamp(2.5rem, 6vw, 6rem);
+    gap: clamp(2.5rem, 5vw, 5rem);
     align-items: start;
   }
-
 }
 
 .prose > * + * {
@@ -133,28 +132,14 @@
   flex: none;
 }
 
-/* Headline whose sentences each take their own line. */
-.headline-stack span {
-  display: block;
-}
-
 /* Section headline: kept to a comfortable measure so long titles break
    into two or three balanced lines rather than one very wide one. */
 .section__title {
-  max-width: 17ch;
-}
-
-.section__title--wide {
   max-width: 22ch;
 }
 
-/* --- Large statement ---------------------------------------------------- */
-.statement {
-  font-family: var(--font-display);
-  font-size: var(--step-2);
-  line-height: 1.24;
-  letter-spacing: -0.018em;
-  text-wrap: balance;
+.section__title--wide {
+  max-width: 30ch;
 }
 
 /* --- Utility ------------------------------------------------------------ */

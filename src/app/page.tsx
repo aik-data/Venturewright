@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
 import { NOINDEX, SEO } from "@/lib/site";
 import { Hero } from "@/components/sections/Hero";
-import { Problem } from "@/components/sections/Problem";
-import { Pillars } from "@/components/sections/Pillars";
-import { Method } from "@/components/sections/Method";
-import { OwnerIndependence } from "@/components/sections/OwnerIndependence";
-import { Practice } from "@/components/sections/Practice";
-import { Symptoms } from "@/components/sections/Symptoms";
-import { WhyVenturewright } from "@/components/sections/WhyVenturewright";
-import { Judgment } from "@/components/sections/Judgment";
+import { Situations } from "@/components/sections/Situations";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Experience } from "@/components/sections/Experience";
 import { About } from "@/components/sections/About";
-import { WhoItsFor } from "@/components/sections/WhoItsFor";
-import { Engagement } from "@/components/sections/Engagement";
 import { FinalCta } from "@/components/sections/FinalCta";
 
 /**
@@ -33,17 +26,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Problem />
-      <Pillars />
-      <Method />
-      <OwnerIndependence />
-      <Practice />
-      <Symptoms />
-      <WhyVenturewright />
-      <Judgment />
+      <Situations />
+      <HowItWorks />
+      <Experience />
       <About />
-      <WhoItsFor />
-      <Engagement />
       <FinalCta />
     </>
   );

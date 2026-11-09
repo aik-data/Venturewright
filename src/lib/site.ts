@@ -59,7 +59,10 @@ export const NOINDEX = process.env.NEXT_PUBLIC_NOINDEX === "true";
 /** `mailto:` href derived from EMAIL so the address is never duplicated. */
 export const EMAIL_HREF = `mailto:${EMAIL}` as const;
 
-export const FOUNDER_NAME = "Matthew";
+export const FOUNDER_NAME = "Matthew Khoury";
+
+/** First name, used in running copy once the full name has been given. */
+export const FOUNDER_FIRST_NAME = "Matthew";
 
 export const CATEGORY = "Business Architecture Studio";
 
@@ -77,7 +80,7 @@ export const EXTERNAL_LINK_PROPS = {
 export const SEO = {
   title: `${COMPANY_NAME} | ${CATEGORY}`,
   description:
-    "Venturewright helps founder-led businesses identify their highest-leverage constraint or opportunity, architect the solution, and turn it into measurable business reality.",
+    "Venturewright helps owners of established businesses identify what is holding them back and redesign the leadership, workflows, and decisions that need to change.",
   canonical: `${SITE_URL}/`,
   ogImage: `${SITE_URL}/og.png`,
   ogImageAlt: `${COMPANY_NAME} — ${CATEGORY}`,
@@ -88,9 +91,7 @@ export const SEO = {
  * root-relative so the same header also works from the 404 page.
  */
 export const NAV_LINKS = [
-  { label: "Approach", href: "/#approach" },
-  { label: "Owner Independence", href: "/#owner-independence" },
-  { label: "Architecture in Practice", href: "/#architecture-in-practice" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Experience", href: "/#experience" },
   { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
 ] as const;

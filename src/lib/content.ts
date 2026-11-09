@@ -7,231 +7,84 @@
  * ---------------------------------------------------------------------------
  */
 
-/* --- The problem: stated problem → measurable outcome -------------------- */
-export const DIAGNOSIS_RAIL = [
-  "Stated problem",
-  "Actual constraint",
-  "Business architecture",
-  "Measurable outcome",
-];
-
-/* --- Three ways Venturewright creates value ------------------------------ */
-export const PILLARS = [
+/* --- When to bring Matthew in -------------------------------------------- */
+export const SITUATIONS = [
   {
-    kicker: "Owner Independence",
-    title: "Own the asset without being the operating system.",
-    body: [
-      "Many founders have built profitable companies that still depend on their personal judgment, relationships, approvals, and daily intervention.",
-      "Venturewright helps redesign leadership, information flow, decision rights, incentives, accountability, and operating systems so founder involvement can become increasingly elective rather than operationally necessary.",
-    ],
+    title: "Decisions keep coming back to you.",
+    body: "Approvals, exceptions, and important calls still route through the owner. The business makes money, but it cannot run well for long without you in the middle of it.",
   },
   {
-    kicker: "Constraint Architecture",
-    title: "Solve the problem beneath the problem.",
-    body: [
-      "Growth may be limited by demand, sales, pricing, capacity, leadership, delivery, information, incentives, decision-making, or something the owner has not identified yet.",
-      "Venturewright investigates the system, determines the highest-leverage constraint, and designs the intervention around it.",
-    ],
+    title: "The team is working harder, but results have stalled.",
+    body: "Effort is up, yet growth or profitability is flat. The cause might be sales, pricing, capacity, leadership, or how work moves through the business, and it is often not where it first appears.",
   },
   {
-    kicker: "Venture Architecture",
-    title: "Build the next asset from what already exists.",
-    body: [
-      "Established businesses often contain underused customers, expertise, infrastructure, distribution, relationships, capabilities, or intellectual property.",
-      "Venturewright evaluates those opportunities and, when the economics make sense, architects the business around them.",
-    ],
+    title: "Too many changes are competing for attention.",
+    body: "A new opportunity, a key hire, a system overhaul, a succession question. Several things matter at once, and you need to decide what comes first.",
   },
 ];
 
-/* --- The Venturewright method -------------------------------------------- */
-export const METHOD_STEPS = [
-  { term: "Desired State", question: "What should become true?" },
-  { term: "Current State", question: "What is actually happening today?" },
+/* --- How working together starts ----------------------------------------- */
+export const STEPS = [
   {
-    term: "Stated Constraint",
-    question: "What does the owner believe is standing in the way?",
+    term: "Introductory conversation",
+    text: "Thirty minutes on your business, where you want it to go, and what seems to be in the way. If there is no clear reason to work together, Matthew will say so.",
   },
   {
-    term: "Actual Constraint",
-    question: "What does the evidence suggest is really limiting the system?",
+    term: "Understanding the business",
+    text: "A close look at how the business actually runs: the numbers, the people, how decisions get made, and how work moves. The problem you see is the starting point, not the conclusion.",
   },
   {
-    term: "Architecture",
-    question:
-      "What must change in the economics, people, systems, incentives, decision rights, workflows, or business model?",
+    term: "Identifying the priority",
+    text: "Finding the change that would make the biggest difference, whether it sits in sales, operations, leadership, pricing, or somewhere between them.",
   },
   {
-    term: "Implementation",
-    question: "Who does what, in what sequence, using what resources?",
-  },
-  {
-    term: "Measurable Outcome",
-    question: "What evidence tells us whether the architecture worked?",
+    term: "Designing the changes",
+    text: "Recommended changes to leadership, workflows, and decisions: who owns what, how decisions are made, what changes, and in what order.",
   },
 ];
 
-/* --- Owner independence: the transformation ------------------------------ */
-type TransformStage = {
-  label: string;
-  items?: string[];
-  note?: string;
-};
-
-export const TRANSFORMATION: TransformStage[] = [
-  {
-    label: "Founder-dependent business",
-    items: ["Decisions", "Knowledge", "Relationships", "Escalations", "Strategy"],
-  },
-  {
-    label: "Business architecture",
-    items: [
-      "Leadership",
-      "Decision Rights",
-      "Information",
-      "Incentives",
-      "Systems",
-      "Accountability",
-    ],
-  },
-  {
-    label: "Owner-optional asset",
-    note: "Founder attention is deployed only where it creates disproportionate value.",
-  },
-];
-
-/* --- Architecture in practice --------------------------------------------
- * These entries describe Matthew’s founder operating experience and business
- * architecture work performed before or outside formal Venturewright client
- * engagements. They are not Venturewright client results, and every entry
- * carries that attribution.
+/* --- Selected operating experience ---------------------------------------
+ * These entries describe Matthew’s work as an owner and operator before
+ * Venturewright. They are not Venturewright client engagements, and the
+ * section that renders them says so.
  * ------------------------------------------------------------------------ */
-export const ATTRIBUTION =
-  "Founder operating experience — methodology predates Venturewright.";
-
 export const CASES = [
   {
-    title: "Founder Independence",
-    sector: "Professional Services",
-    note: ATTRIBUTION,
+    title: "Reducing founder dependence",
+    sector: "Professional services",
+    note: "Owner and operator experience before Venturewright.",
     rows: [
       {
-        label: "Starting Point",
-        text: "A professional-services company was launched with approximately $10,000 of founder capital and no existing employees, clients, infrastructure, technology stack, or operating system.",
+        label: "Situation",
+        text: "A professional-services company Matthew co-founded with about $10,000 of founder capital and no employees, clients, or systems. It grew into a seven-figure business, but critical functions and decisions still depended on the founders, creating leadership gaps and key-person risk.",
       },
       {
-        label: "Growth",
-        text: "The founders built the organization into a substantial seven-figure business.",
+        label: "Matthew’s contribution",
+        text: "Progressively redesigned the leadership structure, ownership of outcomes, executive reporting, decision rights, and operating systems, along with how capacity was managed and how the founders governed the business.",
       },
       {
-        label: "Constraint",
-        text: "As the organization grew, critical functions and decisions remained dependent on the founders. Leadership gaps and key-person risk made founder involvement operationally necessary.",
-      },
-      {
-        label: "Architecture",
-        text: "Leadership structure, outcome ownership, executive reporting, decision rights, operating systems, organizational visibility, capacity management, and founder governance were progressively redesigned.",
-      },
-      {
-        label: "Outcome",
-        text: "By 2026, the business was capable of producing substantial owner economics while required founder operational involvement had fallen to only a few hours per week. Remaining founder involvement increasingly focused on elective strategic growth rather than keeping the organization functioning.",
+        label: "Result",
+        text: "Required founder involvement fell, and the founders’ remaining time has increasingly shifted to elective growth work rather than keeping the business running.",
       },
     ],
   },
   {
-    title: "Succession & Owner Independence",
-    sector: "Operating Business",
-    note: `Anonymized. ${ATTRIBUTION}`,
+    title: "Designing a succession path",
+    sector: "Owner-led operating business",
+    note: "Anonymized. Owner and operator experience before Venturewright.",
     rows: [
       {
-        label: "Starting Point",
-        text: "A profitable owner-led business remained heavily dependent on the owner, who wanted a path toward greater freedom.",
+        label: "Situation",
+        text: "A profitable business depended heavily on its owner, who wanted more freedom. A capable employee wanted more responsibility and possibly eventual ownership, but lacked the capital for a conventional acquisition.",
       },
       {
-        label: "Opportunity",
-        text: "A capable existing employee wanted increased responsibility and potentially eventual ownership but lacked the capital required for a conventional acquisition.",
+        label: "Matthew’s contribution",
+        text: "Designed a succession plan built around operational transition, incentives, and ownership economics, using a lease-to-own, seller-financed structure instead of an immediate conventional purchase.",
       },
       {
-        label: "Architecture",
-        text: "A succession pathway was designed around operational transition, incentives, ownership economics, and a lease-to-own / seller-financed structure rather than requiring an immediate conventional purchase.",
-      },
-      {
-        label: "Outcome",
-        text: "The architecture created a credible pathway for the owner to reduce day-to-day operating dependence while preserving the value of the business.",
+        label: "Current status",
+        text: "A designed plan. It sets out a credible path for the owner to step back from day-to-day operations while preserving the value of the business.",
       },
     ],
   },
-  {
-    title: "Operational Redesign",
-    sector: "Hospitality",
-    note: `Anonymized. ${ATTRIBUTION}`,
-    rows: [
-      {
-        label: "Starting Point",
-        text: "An established operating business had recurring workflow inefficiencies and unnecessary owner dependence inside everyday delivery.",
-      },
-      {
-        label: "Architecture",
-        text: "Customer flow, service delivery, communication systems, packaging, and operating processes were simplified and redesigned.",
-      },
-      {
-        label: "Outcome",
-        text: "The operating system became simpler and less dependent on continuous owner intervention.",
-      },
-    ],
-  },
-];
-
-/* --- Examples of problems ------------------------------------------------ */
-export const SYMPTOMS = [
-  "The company is profitable, but I can’t leave.",
-  "We need more leads — or at least I think we do.",
-  "Our growth has stalled.",
-  "I have someone who could run the company, but I don’t know how to structure it.",
-  "We have a great opportunity but no bandwidth to build it.",
-  "We have too many possible priorities.",
-  "I want another revenue stream without creating another job for myself.",
-  "We’re making money, but everything is harder than it should be.",
-];
-
-/* --- Why Venturewright --------------------------------------------------- */
-export const PRINCIPLES = [
-  {
-    term: "Diagnose before prescribing",
-    description:
-      "The owner’s stated constraint is a hypothesis, not a conclusion.",
-  },
-  {
-    term: "Think across functions",
-    description:
-      "The answer may live in growth, operations, leadership, finance, incentives, capacity, technology, organizational design, or somewhere between them.",
-  },
-  {
-    term: "Stay attached to the outcome",
-    description:
-      "A recommendation that never changes the business has limited value.",
-  },
-];
-
-/* --- Who it’s for -------------------------------------------------------- */
-export const OWNER_SITUATIONS = [
-  "The business makes money, but everything still comes through me.",
-  "We’re working harder, but growth has stalled.",
-  "I see the opportunity. I don’t have the bandwidth to build it.",
-  "I don’t know if the real problem is sales, operations, leadership, or something else.",
-  "I want the economics of ownership without another full-time job.",
-  "We have ten strategic ideas and need to know which one actually matters.",
-];
-
-/* --- Engagement model ---------------------------------------------------- */
-export const ENGAGEMENT_QUESTIONS = [
-  "Where are you trying to go?",
-  "What is happening today?",
-  "What appears to be standing in the way?",
-];
-
-export const ENGAGEMENT_RAIL = [
-  "Conversation",
-  "Diagnosis",
-  "Architecture",
-  "Implementation",
-  "Measurement",
 ];

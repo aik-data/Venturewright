@@ -4,7 +4,7 @@ import { FOUNDER_NAME } from "@/lib/site";
 export function About() {
   return (
     <section
-      className="section section--lg section--ink on-ink"
+      className="section section--sunk"
       id="about"
       aria-labelledby="about-title"
     >
@@ -12,42 +12,30 @@ export function About() {
         <Reveal className="editorial">
           <div className="editorial__aside">
             <p className="eyebrow eyebrow--ruled eyebrow--accent">About</p>
-            <h2 id="about-title">Built by an operator.</h2>
+            <h2 id="about-title">{FOUNDER_NAME}, Founder.</h2>
           </div>
 
-          <div className="prose">
+          <div className="prose prose--tight">
             <p>
-              {FOUNDER_NAME} has spent the last eight years building, scaling,
-              systematizing, and redesigning founder-led businesses from the
-              inside.
+              Matthew has spent the past eight years building, scaling, and
+              redesigning owner-led businesses from the inside. His operating
+              work spans starting companies, organizational design, revenue
+              systems, leadership development, decision-making structures,
+              business-model design, and launching new ventures.
             </p>
             <p>
-              His operating experience includes company creation, organizational
-              architecture, revenue systems, leadership development, founder
-              independence, decision architecture, business-model design,
-              commercialization, and new-venture development.
-            </p>
-            <p>Venturewright grew from a repeated pattern:</p>
-            <p>
-              Business owners would bring complex, scattered problems. The work
-              was to simplify the complexity, identify what actually mattered,
-              and design the system around the solution.
+              Venturewright grew out of a repeated pattern. Business owners
+              would bring him complex, scattered problems, and the work was to
+              find what actually mattered and redesign the business around it.
             </p>
             <p>
-              Venturewright turns that work into a focused business architecture
-              practice.
+              He brings an outside perspective with an operator’s judgment, and
+              looks across the whole business (growth, operations, leadership,
+              finance, and incentives) rather than a single function. His role
+              is to help owners see the business clearly, decide what matters
+              most, and design the changes that follow.
             </p>
           </div>
-        </Reveal>
-
-        <Reveal as="figure" className="quote" delay={60}>
-          <blockquote>
-            “I don’t want to build businesses that require more of the owner’s
-            life. I want to build better assets.”
-          </blockquote>
-          <figcaption>
-            {FOUNDER_NAME} — Founder, Venturewright
-          </figcaption>
         </Reveal>
       </div>
     </section>

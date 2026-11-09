@@ -19,12 +19,3 @@ export function ArrowUpRight({ className }: { className?: string }) {
     </svg>
   );
 }
-
-export function ArrowDown({ className }: { className?: string }) {
-  return (
-    <svg {...base} className={className}>
-      <path d="M8 3.5v9" />
-      <path d="M3.75 8.25 8 12.5l4.25-4.25" />
-    </svg>
-  );
-}
