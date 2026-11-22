@@ -35,7 +35,7 @@ export const DOMAIN_DISPLAY = "venturewrightco.com";
  * Set at build time; all three are optional:
  *
  *   NEXT_PUBLIC_SITE_ORIGIN   scheme + host, no trailing slash
- *                             e.g. https://khouryai.github.io
+ *                             e.g. https://aik-data.github.io
  *   NEXT_PUBLIC_BASE_PATH     sub-path the site is served from, leading slash
  *                             e.g. /Venturewright
  *   NEXT_PUBLIC_NOINDEX       "true" to ask search engines not to index this

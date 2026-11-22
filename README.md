@@ -127,62 +127,57 @@ Everything else is server-rendered at build time.
 
 The build produces a plain static site in `out/`. Any static host works.
 
-### Live now: GitHub Pages (interim)
+### GitHub Pages
 
 `.github/workflows/deploy-pages.yml` builds and publishes the site on every
-push to the default branch.
+push to the deploy branch (or on demand from the Actions tab).
 
-**URL:** <https://khouryai.github.io/Venturewright/>
+The workflow reads the repository's Pages settings at build time and sets the
+deployment target to match, so no edits are needed when the domain changes:
 
-A GitHub Pages *project* site is served from a sub-path, so the workflow passes
-the deployment target to the build:
+| Pages setting | Site address | `NEXT_PUBLIC_BASE_PATH` | Indexed |
+| --- | --- | --- | --- |
+| No custom domain | <https://aik-data.github.io/Venturewright/> | `/Venturewright` | no |
+| Custom domain | <https://venturewrightco.com/> | `""` | yes |
 
-| Variable | Value in the Pages build | Purpose |
-| --- | --- | --- |
-| `NEXT_PUBLIC_SITE_ORIGIN` | `https://khouryai.github.io` | scheme + host |
-| `NEXT_PUBLIC_BASE_PATH` | `/Venturewright` | sub-path (sets `basePath`, prefixes every asset and link) |
-| `NEXT_PUBLIC_NOINDEX` | `true` | keeps the preview out of search results |
-
-All three are optional and unset by default, so a plain `npm run build`
-produces the production-domain build. See [`src/lib/site.ts`](src/lib/site.ts).
+`NEXT_PUBLIC_SITE_ORIGIN`, `NEXT_PUBLIC_BASE_PATH` and `NEXT_PUBLIC_NOINDEX`
+are all optional and unset by default, so a plain `npm run build` produces the
+production-domain build. See [`src/lib/site.ts`](src/lib/site.ts).
 
 **One-time setup:** enable Pages under
 **Settings → Pages → Build and deployment → Source: GitHub Actions**. The
 workflow token is not permitted to turn Pages on by itself, so until this is
-done the run builds successfully and then fails at the deploy step. Once it is
-set, every push publishes automatically.
+done the deploy step fails. Once it is set, every push publishes automatically.
 
-To reproduce the Pages build locally:
+To reproduce the github.io build locally:
 
 ```bash
-NEXT_PUBLIC_SITE_ORIGIN=https://khouryai.github.io \
+NEXT_PUBLIC_SITE_ORIGIN=https://aik-data.github.io \
 NEXT_PUBLIC_BASE_PATH=/Venturewright \
 NEXT_PUBLIC_NOINDEX=true \
 npm run build
 ```
 
-### Migrating to venturewrightco.com
+### Connecting venturewrightco.com (GitHub Pages)
 
-**Option A — stay on GitHub Pages.** Add the domain under Settings → Pages
-(this writes a `CNAME` file), add the DNS records below, then edit the `Build`
-step of the workflow: set `NEXT_PUBLIC_BASE_PATH` to `""`,
-`NEXT_PUBLIC_SITE_ORIGIN` to `https://venturewrightco.com`, and
-`NEXT_PUBLIC_NOINDEX` to `"false"`. A Pages site on a custom domain is served
-from the root, so the sub-path must be removed or every asset will 404.
+1. **Settings → Pages → Custom domain:** enter `venturewrightco.com` and save.
+2. At the domain registrar, add these DNS records:
 
-GitHub Pages apex + `www` records:
+   | Type | Name | Value |
+   | --- | --- | --- |
+   | `A` | `@` | `185.199.108.153` |
+   | `A` | `@` | `185.199.109.153` |
+   | `A` | `@` | `185.199.110.153` |
+   | `A` | `@` | `185.199.111.153` |
+   | `CNAME` | `www` | `aik-data.github.io` |
 
-| Type | Name | Value |
-| --- | --- | --- |
-| `A` | `@` | `185.199.108.153` |
-| `A` | `@` | `185.199.109.153` |
-| `A` | `@` | `185.199.110.153` |
-| `A` | `@` | `185.199.111.153` |
-| `CNAME` | `www` | `khouryai.github.io` |
+3. Once GitHub shows the DNS check as passed, tick **Enforce HTTPS**.
+4. Re-run the *Deploy to GitHub Pages* workflow so the build switches to the
+   root path and becomes indexable.
 
-Then tick **Enforce HTTPS** once the certificate is issued.
+### Alternative: Vercel, Cloudflare Pages or Netlify
 
-**Option B — move to Vercel, Cloudflare Pages or Netlify.** Delete
+Delete
 `.github/workflows/deploy-pages.yml` and follow one of the sections below.
 Those hosts serve from the root, so none of the three variables are needed.
 
@@ -221,7 +216,7 @@ Import the repository; `netlify.toml` already sets the build command
 
 ## Connecting venturewrightco.com on another host
 
-For GitHub Pages, see *Migrating to venturewrightco.com* above. If you move to
+For GitHub Pages, see *Connecting venturewrightco.com* above. If you move to
 one of the hosts below instead, add the domain in that host's dashboard, then
 create the DNS records at whichever registrar holds `venturewrightco.com`.
 
