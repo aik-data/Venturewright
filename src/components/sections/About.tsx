@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
+import portrait from "@/assets/matthew-khoury.jpg";
 import { FOUNDER_NAME } from "@/lib/site";
 
 export function About() {
@@ -13,6 +15,14 @@ export function About() {
           <div className="editorial__aside">
             <p className="eyebrow eyebrow--ruled eyebrow--accent">About</p>
             <h2 id="about-title">{FOUNDER_NAME}, Founder.</h2>
+            <figure className="about__portrait">
+              <Image
+                src={portrait}
+                alt={`Portrait of ${FOUNDER_NAME}`}
+                sizes="(min-width: 60em) 26rem, (min-width: 36em) 24rem, 100vw"
+                placeholder="blur"
+              />
+            </figure>
           </div>
 
           <div className="prose prose--tight">
